@@ -86,8 +86,8 @@ cv::Mat enlarge(const cv::Mat &src, int x, int y, function f)
 
 	image = transpose(image);
 
-	auto mat = f(image);
-	auto seams = searchMinSeam(mat, (x - src.size[1]));
+	mat = f(image);
+	seams = searchMinSeam(mat, (x - src.size[1]));
 	image = enlargeCarving(image, seams);
 
 	image = transpose(image);
